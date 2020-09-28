@@ -1,0 +1,11 @@
+---
+# This is an example playbook to execute Ansible tests.
+- name: Verify
+  hosts: all
+  tasks:
+    - stat:
+        path: /tmp/some_directory/hello_world.txt
+      register: p
+    - assert:
+        that:
+          - p.stat.exists

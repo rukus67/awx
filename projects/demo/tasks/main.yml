@@ -1,0 +1,10 @@
+- name: "Create Hello World directory"
+  file:
+    path: "/tmp/some_directory"
+    state: directory
+    mode: '0755'
+
+- name: "Copy Hello World file"
+  copy:
+      src: "files/hello_world.txt"
+      dest: "/tmp/some_directory"
